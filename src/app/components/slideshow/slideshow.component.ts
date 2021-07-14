@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/interfaces/cartelera-respnse';
-import { Swiper } from 'swiper';
+import  { Swiper } from 'swiper';
 
 @Component({
   selector: 'app-slideshow',
@@ -11,33 +11,31 @@ import { Swiper } from 'swiper';
 export class SlideshowComponent implements OnInit, AfterViewInit {
 
   @Input() movies: Movie[];
+  
+  public mySwiper: Swiper;
 
   constructor() { }
-  ngAfterViewInit(): void {
-    const swiper = new Swiper('.swiper-container', {
-      // Optional parameters
-      loop: true,
 
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    
-      // Navigation arrows
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      })
+  ngAfterViewInit(): void {
+    this.mySwiper = new Swiper('.swiper-container', {
+      loop: true,
+    });
   }
-   
+
   ngOnInit(): void {
 
-    console.log(this.movies);
+    // console.log(this.movies);
+
   }
+
+  onSlideNext(){
+    this.mySwiper.slideNext();
+  }
+
+  onSlidePrev(){
+    this.mySwiper.slidePrev();
+  }
+
+ 
 
 }
