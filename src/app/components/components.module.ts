@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SlideshowComponent } from './slideshow/slideshow.component';
-
+import { PeliculasPosterGripComponent } from './peliculas-poster-grip/peliculas-poster-grip.component';
 
 
 @NgModule({
   declarations: [
     NavbarComponent, 
-    SlideshowComponent
+    SlideshowComponent, 
+    PeliculasPosterGripComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +18,8 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
   ],
   exports: [
     NavbarComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    PeliculasPosterGripComponent
   ]
     
 
