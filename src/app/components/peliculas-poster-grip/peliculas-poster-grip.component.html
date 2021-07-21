@@ -9,19 +9,18 @@
                 <div class="col-10 text-white">
                     
                     <star-rating 
-                    class="star.half"
-                    [value] = movie.vote_average
+                    [value] = "movie.vote_average | number:'1.0-0'"
                     [totalstars]="10" 
                     checkedcolor="gold" 
                     uncheckedcolor="grey" 
                     size="14px" 
                     readonly="true" 
-                    ></star-rating>
+                    >
+                </star-rating>
+                {{ movie.vote_average | number:'1.1-2'}}/10
                
                 </div>
-                <div class="col-2 text-white">
-                    {{ movie.vote_average | number:'1.1-2'}}
-                </div>
+               
             </div>
         </div>
 
