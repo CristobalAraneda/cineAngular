@@ -14,7 +14,7 @@ export class PeliculasPosterGripComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.movies);
+    //console.log(this.movies);
 
   }
 

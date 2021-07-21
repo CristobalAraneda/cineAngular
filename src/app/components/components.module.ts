@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { PeliculasPosterGripComponent } from './peliculas-poster-grip/peliculas-poster-grip.component';
+import { RatingModule } from 'ng-starrating';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { PeliculasPosterGripComponent } from './peliculas-poster-grip/peliculas-
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    RatingModule
   ],
   exports: [
     NavbarComponent,
