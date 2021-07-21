@@ -23,7 +23,7 @@ export class PeliculasService {
   }
 
   getCartelera(): Observable<CarteleraResponse>{
-    console.log('llamado de api');
+   
   return this.http.get<CarteleraResponse>(`${ this.baseUrl }/movie/now_playing`,{
     params: this.params
   }).pipe(
