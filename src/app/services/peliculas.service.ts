@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { CarteleraResponse } from '../interfaces/cartelera-respnse';
+import { map, tap } from 'rxjs/operators';
+import { CarteleraResponse, Movie } from '../interfaces/cartelera-respnse';
 
 @Injectable({
   providedIn: 'root'
@@ -34,4 +34,19 @@ export class PeliculasService {
     )
   );
   }
+ buscarPeliculas( texto: string):Observable<Movie[]>{
+
+// https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>&language=en-US&page=1&include_adult=false
+ const params ={...this.params, page: '1', query: texto};
+
+ return this.http.get<CarteleraResponse>(`${ this.baseUrl}/search/movie`,{ params }).pipe(
+    map( resp => resp.results )
+  )
+
+ }
+
+ ResetCarteleraPage(){
+   this.carteleraPage = 1;
+ }
+
 }
